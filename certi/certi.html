@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Portfólio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#151e2e' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <nav id="navbar" class="fixed w-full z-50 bg-white/90 dark:bg-slate-900/90 shadow-lg backdrop-blur-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tighter flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    &lt;SamDev /&gt; 
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <button onclick="toggleTheme()" class="p-2 rounded-full transition-colors hover:bg-gray-200 dark:hover:bg-slate-700">
+                        <i data-lucide="sun" class="hidden dark:block w-5 h-5"></i>
+                        <i data-lucide="moon" class="block dark:hidden w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow pt-24 pb-4 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        
+        <div class="text-center mb-10 fade-in">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Portfólio & Certificações</h1>
+            <p class="text-lg text-gray-600 dark:text-slate-400 max-w-2xl mx-auto mb-8">
+                Explore meus projetos e trajetória de aprendizado.
+            </p>
+
+            <div class="search-container max-w-2xl mx-auto relative transition-all duration-300">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i data-lucide="search" class="h-5 w-5 text-gray-400"></i>
+                </div>
+<input type="text" 
+       id="search-input" 
+       onkeyup="handleSearch()"
+       class="block w-full pl-12 pr-4 py-4 rounded-xl border-0 ring-1 ring-inset ring-gray-300 dark:ring-slate-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 bg-white dark:bg-slate-800 text-gray-900 dark:text-white shadow-sm text-lg transition-all duration-200" 
+       placeholder="Pesquisar por tecnologia (ex: Python, C#, AWS)...">
+                <div class="absolute inset-y-0 right-0 pr-4 flex items-center">
+                    <span id="search-count" class="text-xs font-medium text-gray-400 bg-gray-100 dark:bg-slate-700 px-2 py-1 rounded-md hidden">0 resultados</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="mb-20 fade-in">
+            <div class="flex items-center justify-between mb-8 border-b border-gray-200 dark:border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold flex items-center gap-2">
+                    <i data-lucide="folder-git-2" class="text-blue-500"></i> Projetos
+                    <span id="project-count-badge" class="ml-2 text-sm font-normal text-gray-500 bg-gray-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">0</span>
+                </h2>
+            </div>
+
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+            
+            <div id="no-projects" class="hidden text-center py-10 border-2 border-dashed border-gray-300 dark:border-slate-700 rounded-2xl">
+                <p class="text-gray-500">Nenhum projeto encontrado para esta pesquisa.</p>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="flex items-center justify-between mb-8 border-b border-gray-200 dark:border-slate-800 pb-4">
+                <h2 class="text-2xl font-bold flex items-center gap-2">
+                    <i data-lucide="award" class="text-purple-500"></i> Certificações
+                    <span id="cert-count-badge" class="ml-2 text-sm font-normal text-gray-500 bg-gray-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">0</span>
+                </h2>
+            </div>
+
+            <div id="certificates-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                </div>
+
+            <div id="no-certificates" class="hidden text-center py-10 border-2 border-dashed border-gray-300 dark:border-slate-700 rounded-2xl">
+                <p class="text-gray-500">Nenhum certificado encontrado para esta pesquisa.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-6 border-t bg-white border-gray-200 dark:bg-slate-950 dark:border-slate-800 text-center text-sm text-gray-500 dark:text-slate-500">
+        <p>Sistema de Gestão de Portfólio • v2.2</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

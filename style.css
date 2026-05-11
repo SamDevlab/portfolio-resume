@@ -1,0 +1,594 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url(img/xp.jpg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume-container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border: 3px solid #333;
+}
+
+.header {
+    background: linear-gradient(135deg, #8b9dc3 0%, #9fa8b8 100%);
+    color: white;
+    padding: 30px 40px;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.browser-bar {
+    background: white;
+    padding: 15px 20px;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.url-bar {
+    flex: 1;
+    background: #f0f0f0;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #5a6c7d;
+    border: 1px solid #ddd;
+}
+
+.content {
+    display: flex;
+    min-height: 600px;
+}
+
+.sidebar {
+    width: 280px;
+    background: #f8f9fa;
+    padding: 30px 25px;
+    border-right: 2px solid #e0e0e0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    background: white;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.section-title {
+    font-size: 26px;
+    color: #5a6c7d;
+    margin: 25px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #8b9dc3;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sidebar .section-title {
+    font-size: 20px;
+    color: #333;
+}
+
+.contact-item {
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.contact-item strong {
+    color: #8b9dc3;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.skills-list {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.skill-item {
+    margin: 15px 0;
+}
+
+.skill-name {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.skill-bar-container {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.skill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #8b9dc3 0%, #9fa8b8 100%);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.skill-level {
+    font-size: 12px;
+    color: #666;
+    margin-top: 3px;
+}
+
+.certificates-list {
+    margin: 15px 0;
+}
+
+.certificate-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin: 10px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #8b9dc3;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.certificate-item:hover {
+    background: #e8f4f8;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-icon {
+    font-size: 24px;
+}
+
+.certificate-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.certificate-info strong {
+    color: #333;
+    font-size: 14px;
+}
+
+.certificate-info span {
+    color: #666;
+    font-size: 12px;
+}
+
+.projects-list {
+    margin: 15px 0;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #e8f4f8 0%, #f0e8f4 100%);
+    border-radius: 8px;
+    border-left: 3px solid #8b9dc3;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-item:hover {
+    background: linear-gradient(135deg, #d0e8f0 0%, #e0d0e8 100%);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-icon {
+    font-size: 24px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.project-info strong {
+    color: #333;
+    font-size: 14px;
+}
+
+.project-info span {
+    color: #666;
+    font-size: 12px;
+}
+
+.likings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.liking-item {
+    background: #8b9dc3;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.experience-item {
+    margin: 20px 0;
+    padding: 18px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #8b9dc3;
+}
+
+.experience-item h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.experience-item .company {
+    color: #8b9dc3;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.experience-item .date {
+    color: #888;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.experience-item p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.education-item {
+    margin: 15px 0;
+    padding: 14px;
+    background: #f0f0f0;
+    border-radius: 6px;
+}
+
+.education-item h4 {
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.education-item .date {
+    color: #888;
+    font-size: 14px;
+}
+
+.education-item p {
+    font-size: 15px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.tech-icon {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #8b9dc3 0%, #9fa8b8 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.objective {
+    background: linear-gradient(135deg, #e8f4f8 0%, #f0e8f4 100%);
+    padding: 22px;
+    border-radius: 10px;
+    margin: 20px 0;
+    line-height: 1.9;
+    color: #333;
+    font-size: 16px;
+}
+
+a {
+    color: #8b9dc3;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.portfolio-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.portfolio-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.portfolio-link:hover {
+    border-color: #8b9dc3;
+    background: #e8f4f8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.link-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.link-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.link-info strong {
+    color: #333;
+    font-size: 17px;
+}
+
+.link-info span {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #e0e0e0;
+    }
+}
+
+/* Theme toggle button in the browser bar */
+#theme-toggle {
+    margin-left: 12px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.08);
+    color: var(--toggle-color, #333);
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-1px);
+}
+
+/* Dark theme overrides (applied when `dark-theme` class is on body) */
+body.dark-theme {
+    background: #0f1415 url('xp.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #dbe6e6;
+}
+
+body.dark-theme .resume-container {
+    background: #131617;
+    border-color: #2a3a40;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+body.dark-theme .header {
+    background: linear-gradient(135deg, #1f2a31 0%, #26323a 100%);
+    color: #eef6f7;
+}
+
+body.dark-theme .header h1 { color: #f2f7f8; }
+
+body.dark-theme .browser-bar { background: rgba(0,0,0,0.35); border-bottom-color: rgba(255,255,255,0.04); }
+
+body.dark-theme .url-bar { background: rgba(0,0,0,0.45); color: #cbd7d7; border-color: rgba(255,255,255,0.03); }
+
+body.dark-theme #theme-toggle { color: #f0f6f6; border-color: rgba(255,255,255,0.06); }
+
+body.dark-theme .sidebar { background: #11181a; border-right-color: #20323a; }
+
+/* Nome na sidebar (Samuel) no tema escuro */
+body.dark-theme .sidebar h2 {
+    color: #dff7f7;
+}
+
+body.dark-theme .main-content { background: transparent; }
+
+body.dark-theme .section-title { color: #dfecee; border-bottom-color: rgba(120,150,175,0.15); }
+
+body.dark-theme .contact-item, body.dark-theme .certificate-info span, body.dark-theme .link-info span { color: #bcd0d0; }
+
+body.dark-theme .skill-bar-container { background: rgba(255,255,255,0.05); }
+
+body.dark-theme .skill-bar { background: linear-gradient(90deg, #2b5262 0%, #2f5b6b 100%); }
+
+body.dark-theme .tech-icon { background: linear-gradient(135deg, #23323a 0%, #2b4048 100%); }
+
+body.dark-theme .experience-item, body.dark-theme .education-item, body.dark-theme .certificate-item, body.dark-theme .project-item, body.dark-theme .portfolio-link {
+    background: rgba(255,255,255,0.02);
+    border-left-color: #2f5a6b;
+    color: #d6e6e6;
+}
+
+body.dark-theme .certificate-item:hover, body.dark-theme .project-item:hover, body.dark-theme .portfolio-link:hover {
+    background: rgba(255,255,255,0.03);
+    transform: translateX(4px);
+}
+
+/* Small adjustments for readability */
+body.dark-theme .objective { background: linear-gradient(135deg, rgba(15,40,45,0.6), rgba(25,35,40,0.6)); color: #dfecee; }
+
+/* Improve typography for dark theme (legibility) */
+body.dark-theme {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #e8f6f6;
+}
+
+body.dark-theme .resume-container,
+body.dark-theme .sidebar,
+body.dark-theme .main-content {
+    font-size: 15px;
+}
+
+body.dark-theme .contact-item,
+body.dark-theme .skill-name,
+body.dark-theme .skill-level,
+body.dark-theme .certificate-info strong,
+body.dark-theme .certificate-info span,
+body.dark-theme .link-info strong,
+body.dark-theme .link-info span,
+body.dark-theme .experience-item p,
+body.dark-theme .education-item p,
+body.dark-theme .project-info strong,
+body.dark-theme .project-info span {
+    color: #d6f0ef;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+body.dark-theme .section-title {
+    color: #f4fbfb;
+    font-weight: 800;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+
+body.dark-theme .experience-item .company,
+body.dark-theme .education-item h4 {
+    color: #bfe7e7;
+    font-weight: 700;
+}
+
+/* make links clearer in dark */
+body.dark-theme a { color: #9fe0ea; }
+
+/* soften card borders */
+body.dark-theme .certificate-item,
+body.dark-theme .project-item,
+body.dark-theme .experience-item,
+body.dark-theme .education-item {
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-left-color: rgba(79,145,160,0.25);
+}
+
+
+/* 1. Corrige a barra de endereço (URL) do navegador fake */
+body.dark-theme .url-bar {
+    background-color: #2a2a2a !important; /* Fundo cinza escuro */
+    color: #ffffff !important;           /* Texto branco */
+    border: 1px solid #444 !important;
+}
+
+/* 2. Corrige os Títulos das Profissões (Ex: Assistente Administrativo) */
+body.dark-theme .experience-item h3 {
+    color: #ffffff !important; /* Branco puro */
+    text-shadow: none !important;
+}
+
+/* 3. Corrige o nome da empresa (Ex: SEREDE) para destacar */
+body.dark-theme .experience-item .company {
+    color: #8dbed6 !important; /* Azul claro neon */
+}
+
+/* 4. Corrige os Títulos da Educação (Ex: Ensino Médio) */
+body.dark-theme .education-item h4 {
+    color: #ffffff !important;
+}
+
+/* 5. Corrige Títulos de Projetos e Certificados */
+body.dark-theme .certificate-info strong,
+body.dark-theme .project-info strong {
+    color: #ffffff !important;
+}
+
+/* 6. Corrige os subtítulos/datas em geral */
+body.dark-theme .date, 
+body.dark-theme .certificate-info span, 
+body.dark-theme .project-info span {
+    color: #bbb !important; /* Cinza claro legível */
+}
