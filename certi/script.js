@@ -291,38 +291,46 @@ Introdução ao Back-end com .NET e IA com a Avanade
 27/09/2025 20:40`;
 
 function inferTagsFromTitle(title) {
+    const lowerTitle = title.toLowerCase();
     const tags = [];
-    const rules = [
-        { re: /\bgithub copilot\b/i, tag: 'Copilot' },
-        { re: /\bcopilot\b/i, tag: 'Copilot' },
-        { re: /\bjavascript\b/i, tag: 'JavaScript' },
-        { re: /\bjava\b/i, tag: 'Java' },
-        { re: /\bpython\b/i, tag: 'Python' },
-        { re: /\bc#\b/i, tag: 'C#' },
-        { re: /\b\.net\b/i, tag: '.NET' },
-        { re: /\bsql\b/i, tag: 'SQL' },
-        { re: /\bexcel\b/i, tag: 'Excel' },
-        { re: /power query/i, tag: 'Power Query' },
-        { re: /power bi/i, tag: 'Power BI' },
-        { re: /machine learning/i, tag: 'Machine Learning' },
-        { re: /\bia\b|intelig[eê]ncia artificial|genai/i, tag: 'IA' },
-        { re: /vis[oã]o computacional|visao computacional/i, tag: 'Visão Computacional' },
-        { re: /pln|processamento de linguagem natural|linguagem natural/i, tag: 'PLN' },
-        { re: /linux/i, tag: 'Linux' },
-        { re: /ciberseguran[cç]a|pentest|testes de invasão/i, tag: 'Cibersegurança' },
-        { re: /git(hub)?/i, tag: 'Git' },
-        { re: /prompt/i, tag: 'Prompt Engineering' },
-        { re: /dados|business intelligence|bi/i, tag: 'Dados' },
-        { re: /etl/i, tag: 'ETL' },
-        { re: /low-?code/i, tag: 'Low-Code' },
-        { re: /chatbot/i, tag: 'Chatbot' }
+
+    const keywordTags = [
+        ['github copilot', 'Copilot'],
+        ['copilot', 'Copilot'],
+        ['python', 'Python'],
+        ['java', 'Java'],
+        ['javascript', 'JavaScript'],
+        ['c#', 'C#'],
+        ['.net', '.NET'],
+        ['sql', 'SQL'],
+        ['excel', 'Excel'],
+        ['power query', 'Power Query'],
+        ['power bi', 'Power BI'],
+        ['machine learning', 'Machine Learning'],
+        ['ia', 'IA'],
+        ['inteligência artificial', 'IA'],
+        ['genai', 'GenAI'],
+        ['linux', 'Linux'],
+        ['cibersegurança', 'Cibersegurança'],
+        ['pentest', 'Pentest'],
+        ['git', 'Git'],
+        ['github', 'GitHub'],
+        ['prompt', 'Prompt Engineering'],
+        ['dados', 'Dados'],
+        ['etl', 'ETL'],
+        ['low-code', 'Low-Code'],
+        ['chatbot', 'Chatbot']
     ];
 
-    rules.forEach(({ re, tag }) => {
-        if (re.test(title)) tags.push(tag);
+    keywordTags.forEach(([keyword, tag]) => {
+        if (lowerTitle.includes(keyword)) {
+            tags.push(tag);
+        }
     });
 
-    if (tags.length === 0) tags.push('Bootcamp');
+    if (tags.length === 0) {
+        tags.push('Bootcamp');
+    }
 
     return [...new Set(tags)].slice(0, 6);
 }

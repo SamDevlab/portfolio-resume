@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url(img/xp.jpg) no-repeat center center fixed;
+    background: url(xp.jpg) no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     padding: 40px 20px;

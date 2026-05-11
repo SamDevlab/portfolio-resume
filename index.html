@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="resume-container">
-        <header class="browser-bar" role="banner">
+        <div class="browser-bar">
             <div class="browser-dots">
                 <div class="dot red"></div>
                 <div class="dot yellow"></div>
@@ -16,24 +16,24 @@
             </div>
             <div class="url-bar">samportifolio.netlify.app</div>
             <button id="theme-toggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-        </header>
+        </div>
 
         <div class="header">
             <h1>Meu currículo</h1>
         </div>
 
         <div class="content">
-            <aside class="sidebar" role="complementary">
+            <div class="sidebar">
                 <h2>SAMUEL DE ARAÚJO DA SILVA</h2>
 
                 <div class="section-title">CONTATO</div>
                 <div class="contact-item">
                     <strong>📞 Telefone:</strong>
-                    <a href="tel:+5571988932925" aria-label="Ligar para Samuel">(71) 98893-2925</a>
+                    (71) 98893-2925
                 </div>
                 <div class="contact-item">
                     <strong>📧 E-mail:</strong>
-                    <a href="mailto:samueljunior172@gmail.com" aria-label="Enviar e-mail para Samuel">samueljunior172@gmail.com</a>
+                    samueljunior172@gmail.com
                 </div>
                 <div class="contact-item">
                     <strong>📍 Endereço:</strong>
@@ -98,12 +98,54 @@
                 </div>
 
                 <div class="section-title">CERTIFICADOS</div>
-                <div id="certificates-summary" class="certificates-list" aria-live="polite">
-                    <div id="cert-summary-header" style="display:flex;justify-content:space-between;align-items:center;">
-                        <span id="cert-total">Certificados: 0</span>
-                        <a id="cert-see-all" href="certi/certi.html" target="_blank">Ver todos</a>
-                    </div>
-                    <div id="sidebar-certs"></div>
+                <div class="certificates-list">
+                    <a href="https://www.dio.me/certificate/RXYXULWG/share" target="_blank" class="certificate-item">
+                        <span class="certificate-icon">📜</span>
+                        <div class="certificate-info">
+                            <strong>Primeiros Passos com GitHub Copilot</strong>
+                            <span>DIO - 2025</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.dio.me/certificate/W5DPV26Z/share" target="_blank" class="certificate-item">
+                        <span class="certificate-icon">📜</span>
+                        <div class="certificate-info">
+                            <strong>Domine a Engenharia de Prompt</strong>
+                            <span>GitHub Copilot - DIO</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.dio.me/certificate/TX4MPMHR/share" target="_blank" class="certificate-item">
+                        <span class="certificate-icon">📜</span>
+                        <div class="certificate-info">
+                            <strong>GitHub Copilot em Ação</strong>
+                            <span>Projetos Prontos - DIO</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.dio.me/certificate/3JOADPC7/share" target="_blank" class="certificate-item">
+                        <span class="certificate-icon">📜</span>
+                        <div class="certificate-info">
+                            <strong>GitHub Copilot - Código na Prática</strong>
+                            <span>DIO - 2025</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.credly.com/badges/fd7b07b9-943d-479e-b8e1-52cd825ee0ba" class="certificate-item">
+                        <span class="certificate-icon">📜</span>
+                        <div class="certificate-info">
+                            <strong>Introdução à Cibersegurança</strong>
+                            <span>Cisco - 2025</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.credly.com/badges/95469008-95b1-4c6c-9dd4-098e8ab3ef07" class="certificate-item">
+                        <span class="certificate-icon">📜</span>
+                        <div class="certificate-info">
+                            <strong>Computer Hardware Basics</strong>
+                            <span>Cisco - 2025</span>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="section-title">PROJETOS</div>
@@ -222,34 +264,6 @@
             </div>
         </div>
     </div>
-    <script src="certi/data.js"></script>
-    <script>
-        // Preenche o sumário de certificados no sidebar usando certi/data.js
-        document.addEventListener('DOMContentLoaded', () => {
-            const data = window.certificatesData || [];
-            const totalEl = document.getElementById('cert-total');
-            const listEl = document.getElementById('sidebar-certs');
-            const seeAll = document.getElementById('cert-see-all');
-
-            totalEl.textContent = `Certificados: ${data.length}`;
-            // mostrarmos os 3 mais recentes (assumindo ordem no array)
-            const latest = data.slice(0, 3);
-            listEl.innerHTML = '';
-            latest.forEach(cert => {
-                const a = document.createElement('div');
-                a.className = 'certificate-item';
-                a.innerHTML = `<span class="certificate-icon">📜</span>
-                    <div class="certificate-info">
-                        <strong>${cert.title}</strong>
-                        <span>${cert.issuer} • ${cert.date}</span>
-                    </div>`;
-                listEl.appendChild(a);
-            });
-
-            // atualizar link 'Ver todos' (abre a página completa)
-            seeAll.href = 'certi/certi.html';
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
